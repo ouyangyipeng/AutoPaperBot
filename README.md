@@ -100,6 +100,12 @@ graph TB
 AutoPaperBot/
 ├── MEGA_PROMPT.md          # 核心提示词，定义流水线和约束
 ├── RESTRICTS.yaml          # 约束清单和反模式规则
+├── README.md               # 项目说明文档
+├── skill.md                # Claude Skill文件，供AI Agent参考
+├── 论文写作心得.md           # 详细论文写作经验文档
+├── resource/               # 资源文件目录
+│   ├── 会议纪要.txt         # 实验室论文写作会议记录
+│   └── *.pdf               # 论文写作分享PPT
 ├── code/                   # 实验代码目录
 ├── data/                   # 输入数据目录
 ├── docs/                   # 论文文档目录
