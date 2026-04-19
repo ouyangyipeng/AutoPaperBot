@@ -98,28 +98,31 @@ graph TB
 
 ```
 AutoPaperBot/
-├── MEGA_PROMPT.md          # 核心提示词，定义流水线和约束
-├── RESTRICTS.yaml          # 约束清单和反模式规则
-├── README.md               # 项目说明文档
-├── skill.md                # Claude Skill文件，供AI Agent参考
-├── 论文写作心得.md           # 详细论文写作经验文档
-├── resource/               # 资源文件目录
-│   ├── 会议纪要.txt         # 实验室论文写作会议记录
-│   └── *.pdf               # 论文写作分享PPT
-├── code/                   # 实验代码目录
-├── data/                   # 输入数据目录
-├── docs/                   # 论文文档目录
-│   ├── 实验构想参考.md      # 实验设计方案
-│   ├── 文献方向和可能的问题.md  # 相关工作和审稿问题防御
-│   └── 论文整体构想.md       # 论文大纲
-├── paper/                  # 论文写作目录
-│   ├── COLM_2026_TEMPLATE/ # 目标会议LaTeX模板
-│   └── mypaper/            # 论文撰写工作区
-│       ├── figures/        # 图表目录
-│       ├── sections/       # 论文章节
-│       └── main.tex         # 主文件
-├── plans/                  # 阶段计划文件
-└── results/                # 实验结果数据
+├── MEGA_PROMPT.md                        # 核心提示词，定义流水线和约束
+├── RESTRICTS.yaml                        # 约束清单和反模式规则
+├── README.md                              # 项目说明文档
+├── 论文写作心得.md                          # 详细论文写作经验文档（基于v8版PPT）
+├── academic-paper-writing-skill/          # 论文写作Skill（供AI Agent参考）
+│   └── SKILL.md                           # 写作skill主文件
+├── academic-paper-cheching-skill/         # 论文检查Skill（评估已写好的论文）
+│   └── SKILL.md                           # 检查skill主文件
+├── resource/                              # 资源文件目录
+│   ├── 会议纪要.txt                        # 实验室论文写作会议记录
+│   └── *.pdf                              # 论文写作分享PPT
+├── code/                                  # 实验代码目录
+├── data/                                  # 输入数据目录
+├── docs/                                  # 论文文档目录
+│   ├── 实验构想参考.md                     # 实验设计方案
+│   ├── 文献方向和可能的问题.md              # 相关工作和审稿问题防御
+│   └── 论文整体构想.md                     # 论文大纲
+├── paper/                                 # 论文写作目录
+│   ├── COLM_2026_TEMPLATE/                # 目标会议LaTeX模板
+│   └── mypaper/                           # 论文撰写工作区
+│       ├── figures/                       # 图表目录
+│       ├── sections/                      # 论文章节
+│       └── main.tex                        # 主文件
+├── plans/                                 # 阶段计划文件
+└── results/                               # 实验结果数据
 ```
 
 ## 🚀 快速开始
@@ -161,6 +164,32 @@ export TAVILY_API_KEY="your_tavily_key"       # 可选
 ### 5. 启动Agent
 
 将 `MEGA_PROMPT.md` 的内容作为系统提示词提供给 AI Agent，即可开始自动论文写作流程。
+
+## 🧩 Agent Skills
+
+本项目提供两个 Claude Skill，供 AI Agent 写作和检查论文时参考：
+
+### 论文写作 Skill (`academic-paper-writing-skill/`)
+
+基于"从工程实现到科学论证"方法论，指导 Agent 撰写高质量学术论文：
+
+- **核心哲学**：写作 = 构建论证，而非记录工作
+- **研究vs写作逻辑**：探索混沌 → 叙事秩序的逻辑重构
+- **四维评估框架**：问题关键性 / 洞察有效性 / 设计必然性 / 验证充分性
+- **审稿人心理**：四大公理（默认不信任、耐心有限、感性喜恶、逻辑闭环）
+- **完整自检清单**：13项提交前必检项
+
+### 论文检查 Skill (`academic-paper-cheching-skill/`)
+
+对已完成的论文进行系统性质量评估，生成评分报告和改进建议：
+
+- **7维评分体系**：每个维度0-10分，含具体评分标准
+- **四维核心框架**：问题关键性 / 洞察有效性 / 设计必然性 / 验证充分性
+- **3维表达质量**：逻辑闭环 / 认知负荷 / 专业严谨
+- **结构化报告**：包含评分表、详细问题、优先级排序的改进建议
+- **提交就绪评估**：13项 Checklist 逐项检查
+
+> 两个 Skill 均遵循 Claude 官方 SKILL.md 规范，兼容 Claude Code、OpenAI Codex 等主流 Agent 平台。
 
 ## 🎯 核心特性
 
